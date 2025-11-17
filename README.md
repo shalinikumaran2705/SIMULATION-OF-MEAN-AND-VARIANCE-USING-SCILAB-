@@ -36,7 +36,59 @@ __PROCEDURE:__
 
 __PROGRAM:__
 
+```
+clear;
+clc;
+clear;
+//Mean
+function X=f(x)
+z =3*(1-x)^2;
+X=x*z;
+endfunction
+a =1;
+b =2;
+EX=intg(a, b, f);
+function Y=c(y)
+z =3*(1-y)^2;
+Y=y*z;
+endfunction
+EY=intg(a, b, c);
+disp("i) Mean of X = ",EX);
+disp("ii)Mean of Y = ",EY);
+//variance
+function X=g(x),
+z=3*(1-x)^2,
+X=x^2*z
+endfunction
+a=2;
+b=3;
+EX2=intg(a,b,g);
+function Y=h(y)
+z=3*(1-y)^2,
+Y=y^2*z
+endfunction
+EY2=intg(a,b,h);
+vX2=EX2-(EX)^2;
+vY2=EY2-(EY)^2;
+disp("iii)Variance of X",vX2);
+disp("iv) Variance of Y",vY2);
+
+//Cross correlation
+x= input("type in the reference sequence=");
+y= input("type in the second sequence=");
+n1=max(size(y))-1;
+n2=max(size(x))-1;
+r=corr(x,y,n1);
+plot2d3('gnn',r);
+```
+
 __OUTPUT GRAPH:__
 
+<img width="501" height="283" alt="image" src="https://github.com/user-attachments/assets/9eae18a1-4aa4-443f-8384-6394370ec0bc" />
+
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/cf177e9a-f13b-4c64-ac9e-8ee828fc4cde" />
+
 __RESULT:__
+
+Thus, the mean and variance and cross correlation are executed in SCI-Lab
 
